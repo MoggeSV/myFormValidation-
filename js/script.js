@@ -14,11 +14,11 @@ $(function () {
     };
 
     $('form').submit(function (e) {
-    if (formValid.firstname == true /*&& formValid.lastname == true && formValid.email == true && formValid.password == true && formValid.address == true && formValid.city == true && formValid.zip == true && formValid.birthyear == true && formValid.occupation == true && formValid.textarea == true*/) {
+    if (formValid.firstname == true && formValid.lastname == true && formValid.email == true && formValid.password == true && formValid.address == true && formValid.city == true && formValid.zip == true && formValid.birthyear == true && formValid.occupation == true && formValid.textarea == true) {
         return;
     } else {
         $('#alertRow').addClass("alert alert-danger");
-        $('#alertText').show();
+        $('#alertText').show(100)
     }
     e.preventDefault();
     });
@@ -80,12 +80,12 @@ $(function () {
     function validateEmail(email) {
         let regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return regex.test(email);
-    }
+    };
 
     $('#inputPassword').on('change', function () {
         let input = $(this);
 
-        if (input.val().length > 7) {
+        if (validatePassword(input.val())) {
             console.log('Fungerar');
             $(this).removeClass("is-invalid").addClass("is-valid");
             formValid.password = true;
@@ -95,6 +95,12 @@ $(function () {
             formValid.password = false;
         }
     });
+
+    function validatePassword(password) {
+        let regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+        return regex.test(password);
+    };
+
 
     $('#inputAddress').on('change', function () {
         let input = $(this);
@@ -127,7 +133,7 @@ $(function () {
     $('#inputZip').on('change', function () {
         let input = $(this);
 
-        if (input.val().length == 5) {
+        if (input.val().length == 5 && validateZip(input.val())) {
             console.log('Fungerar');
             $(this).removeClass("is-invalid").addClass("is-valid");
             formValid.zip = true;
@@ -137,6 +143,11 @@ $(function () {
             formValid.zip = false;
         }
     });
+
+    function validateZip(zip) {
+        let regex = /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/;
+        return regex.test(zip);
+    };
 
     $('#inputAge').on('change', function () {
         let age = $('#inputAge option:selected').val();
@@ -150,6 +161,8 @@ $(function () {
             $(this).removeClass("is-invalid").addClass("is-valid");
         }
     });
+
+    
 
     $('#inputTextArea').on('change', function () {
         let input = $(this);
