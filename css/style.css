@@ -6,3 +6,15 @@
     height: 50px;
     display: block;
 }
+
+#alertRow p{
+    display: none;
+}
+
+#textAreaRow{
+    padding-bottom: 25px;
+}
+
+.form-row{
+    padding: 10px 0;
+}
