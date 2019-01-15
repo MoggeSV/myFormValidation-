@@ -11,154 +11,160 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
         crossorigin="anonymous">
-        
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Registration form</h1>
-        <div id="alertRow"><p id="alertText">You have fill out the form completely before submitting</p></div>
-        <form>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputFirstName">Firstname</label>
-                    <input type="text" class="form-control" id="inputFirstName" placeholder="Firstname">
-                    <div class="valid-tooltip">
-                        Looks good!
-                      </div>
-                      <div class="invalid-tooltip">
-                        Your firstname needs to contain atleast 2 characters
-                      </div>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputLastName">Lastname</label>
-                    <input type="text" class="form-control" id="inputLastName" placeholder="Lastname">
-                    <div class="valid-tooltip">
-                        Looks good!
-                      </div>
-                      <div class="invalid-tooltip">
-                        Your lastname needs to contain atleast 2 characters
-                      </div>
-                </div>
+    <div class="wrap">
+        <div class="container">
+            <h1>Registration form</h1>
+            <div id="alertRow">
+                <p id="alertText">You have fill out the form completely before submitting</p>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputEmail">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                    <div class="valid-tooltip">
-                        Looks good!
-                      </div>
-                      <div class="invalid-tooltip">
-                        You need to enter a correct email address
-                      </div>
+            <form class="bg-light" novalidate>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputFirstName">Firstname</label>
+                        <input type="text" class="form-control" id="inputFirstName" placeholder="Firstname">
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                        <div class="invalid-tooltip">
+                            Your firstname needs to contain atleast 2 characters
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputLastName">Lastname</label>
+                        <input type="text" class="form-control" id="inputLastName" placeholder="Lastname">
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                        <div class="invalid-tooltip">
+                            Your lastname needs to contain atleast 2 characters
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="inputPassword">Password</label>
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                    <div class="valid-tooltip">
-                        Looks good!
-                      </div>
-                      <div class="invalid-tooltip">
-                        Your password needs to contain atleast one digit, one lowercase, one uppercase and be atleast 8 in length.
-                      </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                        <div class="invalid-tooltip">
+                            You need to enter a correct email address
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                        <div class="invalid-tooltip">
+                            Your password needs to contain atleast one digit, one lowercase, one uppercase and be
+                            atleast 8 in length.
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                <div class="valid-tooltip">
-                    Looks good!
-                  </div>
-                  <div class="invalid-tooltip">
-                    Your address needs to contain atleast 2 characters
-                  </div>
-            </div>
-        </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                        <div class="invalid-tooltip">
+                            Your address needs to contain atleast 2 characters
+                        </div>
+                    </div>
+                </div>
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputCity">City</label>
-                    <input type="text" class="form-control" id="inputCity">
-                    <div class="valid-tooltip">
-                        Looks good!
-                      </div>
-                      <div class="invalid-tooltip">
-                        Your city name needs to contain atleast 2 characters
-                      </div>
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
-                    <div class="valid-tooltip">
-                        Looks good!
-                      </div>
-                      <div class="invalid-tooltip">
-                        Your zipcode needs to be only 5 digits
-                      </div>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputAge">Birthyear</label>
-                    <select id="inputAge" class="form-control" required>
-                        <option selected>Choose your birthyear</option>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                        <div class="invalid-tooltip">
+                            Your city name needs to contain atleast 2 characters
+                        </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                        <div class="invalid-tooltip">
+                            Your zipcode needs to be only 5 digits
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputAge">Birthyear</label>
+                        <select id="inputAge" class="form-control" required>
+                            <option selected>Choose your birthyear</option>
                         </select>
                         <div class="valid-tooltip">
                             Looks good!
-                          </div>
-                          <div class="invalid-tooltip">
+                        </div>
+                        <div class="invalid-tooltip">
                             You need to choose your birthyear from the dropdown list
-                          </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="inputRadio">Occupation</label>
-                </div>
-                <div class="custom-control custom-radio occupationRadioButton">
-                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+                <div class="form-row">
+                    <div class="form-group col-md-12 radioButtons">
+                        <label for="inputRadio">Occupation</label>
+                    </div>
+                    <div class="custom-control custom-radio occupationRadioButton ">
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input " required>
                         <label class="custom-control-label" for="customRadio1">Employed</label>
-                      </div>
-                      <div class="custom-control custom-radio occupationRadioButton">
+                    </div>
+                    <div class="custom-control custom-radio occupationRadioButton">
                         <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
                         <label class="custom-control-label" for="customRadio2">Unemployed</label>
-                      </div>
-                      <div class="custom-control custom-radio occupationRadioButton">
-                            <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio3">Student</label>
-                          </div>
-                          <div class="custom-control custom-radio occupationRadioButton">
-                            <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio4">Other</label>
-                          </div>
-            </div>
-            <div class="form-row" id="textAreaRow">
-                <div class="form-group col-md-12">
-                    <label for="inputTextArea">Reason for registration.</label>
-                    <textarea class="form-control" aria-label="With textarea" id="inputTextArea"></textarea>
-                    <div class="valid-tooltip">
-                        Looks good!
-                      </div>
-                      <div class="invalid-tooltip">
-                        Your reasons needs atleast to be 20 characters long
-                      </div>
+                    </div>
+                    <div class="custom-control custom-radio occupationRadioButton">
+                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio3">Student</label>
+                    </div>
+                    <div class="custom-control custom-radio occupationRadioButton">
+                        <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadio4">Other</label>
+                    </div>
                 </div>
-            </div>
-           
-            <div class="form-group">
-                <div class="form-check">
-                  <input class="form-check-input is-invalid" type="checkbox" value="" id="inputCheck" required>
-                  <label class="form-check-label" for="inputCheck">
-                    Agree to terms and conditions
-                  </label>
-                  <div class="invalid-feedback">
-                    You must agree before submitting.
-                  </div>
+                <div id="alertRowRadio" class="form-row">You need to choose one of the above</div>
+                <div class="form-row" id="textAreaRow">
+                    <div class="form-group col-md-12">
+                        <label for="inputTextArea">Reason for registration.</label>
+                        <textarea class="form-control" aria-label="With textarea" id="inputTextArea"></textarea>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                        <div class="invalid-tooltip">
+                            Your reasons needs atleast to be 20 characters long
+                        </div>
+                    </div>
                 </div>
-              </div>
 
-            <button type="submit" class="btn btn-primary" id="submit" disabled>Sign in</button>
-        </form>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input is-invalid" type="checkbox" value="" id="inputCheck" required>
+                        <label class="form-check-label" for="inputCheck">
+                            Agree to terms and conditions
+                        </label>
+                        <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="submit" disabled>Register</button>
+            </form>
+        </div>
     </div>
 
 

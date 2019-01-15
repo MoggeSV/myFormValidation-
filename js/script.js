@@ -15,10 +15,13 @@ $(function () {
 
     $('form').submit(function (e) {
     if (formValid.firstname == true && formValid.lastname == true && formValid.email == true && formValid.password == true && formValid.address == true && formValid.city == true && formValid.zip == true && formValid.birthyear == true && formValid.occupation == true && formValid.textarea == true) {
+        //window.location.href = 'registration.html';
+        alert("Registrering lyckades")
         return;
     } else {
         $('#alertRow').addClass("alert alert-danger");
-        $('#alertText').show(100)
+        $('#alertText').show(100);
+        alert("registreringen misslyckades")
     }
     e.preventDefault();
     });
@@ -41,8 +44,8 @@ $(function () {
         } else {
             console.log('Fungerar inte');
             $(this).removeClass("is-valid").addClass("is-invalid");
-            formValid.lastname = false;
-            //$('#alertRow').addClass("alert alert-danger")
+            formValid.firstname = false;
+            
         }
 
     });
@@ -161,6 +164,12 @@ $(function () {
             $(this).removeClass("is-invalid").addClass("is-valid");
         }
     });
+
+    /*$('#inputRadio').on('change', function () {
+       if ($('input[name=customRadio]:checked').length <= 0) {
+           
+       } 
+    });*/
 
     
 

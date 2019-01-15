@@ -1,3 +1,7 @@
+.wrap{
+    background: url(/images/board-close-up-coffee-905868.jpg);
+}
+
 .occupationRadioButton{
     padding: 0 20px 40px 20px;
 }
@@ -15,6 +19,20 @@
     padding-bottom: 25px;
 }
 
+form{
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .form-row{
     padding: 10px 0;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.wrapper{
+    background: url(/images/achievement-activity-adolescent-347135.jpg);
 }
