@@ -1,5 +1,10 @@
+body{
+    
+}
+
+
 .wrap{
-    background: url(/images/board-close-up-coffee-905868.jpg);
+    
 }
 
 .occupationRadioButton{
@@ -21,11 +26,10 @@
 
 form{
     padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .form-row{
-    padding: 10px 0;
+    
 }
 
 h1{
@@ -35,4 +39,9 @@ h1{
 
 .wrapper{
     background: url(/images/achievement-activity-adolescent-347135.jpg);
+}
+
+.radio-section{
+    
+    
 }

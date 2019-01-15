@@ -17,115 +17,91 @@
 
 <body>
     <div class="wrap">
-        <div class="container">
-            <h1>Registration form</h1>
+        <div class="container bg-light shadow">
+            <h2 class="text-center">Registreringsformulär</h2>
             <div id="alertRow">
-                <p id="alertText">You have fill out the form completely before submitting</p>
+                <p id="alertText">Du måste fylla i alla fält innan du skickar in formuläret</p>
             </div>
-            <form class="bg-light" novalidate>
+            <form class="" novalidate>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputFirstName">Firstname</label>
-                        <input type="text" class="form-control" id="inputFirstName" placeholder="Firstname">
-                        <div class="valid-tooltip">
-                            Looks good!
-                        </div>
-                        <div class="invalid-tooltip">
-                            Your firstname needs to contain atleast 2 characters
+                        <label for="inputFirstName">Förnamn</label>
+                        <input type="text" class="form-control" id="inputFirstName">
+                        <div class="invalid-feedback">
+                            Ditt förnamn måste innhålla minst 2 tecken
                         </div>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputLastName">Lastname</label>
-                        <input type="text" class="form-control" id="inputLastName" placeholder="Lastname">
-                        <div class="valid-tooltip">
-                            Looks good!
-                        </div>
-                        <div class="invalid-tooltip">
-                            Your lastname needs to contain atleast 2 characters
+                        <label for="inputLastName">Efternamn</label>
+                        <input type="text" class="form-control" id="inputLastName">
+                        <div class="invalid-feedback">
+                            Ditt efternamn måste innhålla minst 2 tecken
                         </div>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                        <div class="valid-tooltip">
-                            Looks good!
-                        </div>
-                        <div class="invalid-tooltip">
-                            You need to enter a correct email address
+                        <label for="inputEmail">E-postadress</label>
+                        <input type="email" class="form-control" id="inputEmail">
+                        <div class="invalid-feedback">
+                            Du måste ange en korrekt e-postadress
                         </div>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword">Password</label>
+                        <label for="inputPassword">Lösenord</label>
                         <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                        <div class="valid-tooltip">
-                            Looks good!
-                        </div>
-                        <div class="invalid-tooltip">
-                            Your password needs to contain atleast one digit, one lowercase, one uppercase and be
-                            atleast 8 in length.
+                        <div class="invalid-feedback">
+                            Ditt lösenord måste innhålla minst 1 stor & 1 liten bokstav samt en siffra 
                         </div>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="inputAddress">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                        <div class="valid-tooltip">
-                            Looks good!
-                        </div>
-                        <div class="invalid-tooltip">
-                            Your address needs to contain atleast 2 characters
+                        <label for="inputAddress">Adress</label>
+                        <input type="text" class="form-control" id="inputAddress">
+                        <div class="invalid-feedback">
+                            Din adress måste minst innehålla 2 tecken
                         </div>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
+                        <label for="inputCity">Ort</label>
                         <input type="text" class="form-control" id="inputCity">
-                        <div class="valid-tooltip">
-                            Looks good!
-                        </div>
-                        <div class="invalid-tooltip">
-                            Your city name needs to contain atleast 2 characters
+                        <div class="invalid-feedback">
+                            Din ort måste minst innhålla 2 tecken
                         </div>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputZip">Zip</label>
-                        <input type="text" class="form-control" id="inputZip">
-                        <div class="valid-tooltip">
-                            Looks good!
-                        </div>
-                        <div class="invalid-tooltip">
-                            Your zipcode needs to be only 5 digits
+                        <label for="inputZip">Postnummer</label>
+                        <input type="text" class="form-control" id="inputZip" maxlength="5" minlength="5">
+                        <div class="invalid-feedback">
+                            Ditt postnummer måste innehålla 5 siffror
                         </div>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="inputAge">Birthyear</label>
+                        <label for="inputAge">Födelseår</label>
                         <select id="inputAge" class="form-control" required>
-                            <option selected>Choose your birthyear</option>
+                            <option selected>Välj ditt födelseår</option>
                         </select>
-                        <div class="valid-tooltip">
-                            Looks good!
-                        </div>
-                        <div class="invalid-tooltip">
-                            You need to choose your birthyear from the dropdown list
+                        <div class="invalid-feedback">
+                            Du måste välja ett årtal från listan
                         </div>
                     </div>
                 </div>
-                <div class="form-row">
+                <hr>
+                <div class="form-row radio-section">
                     <div class="form-group col-md-12 radioButtons">
-                        <label for="inputRadio">Occupation</label>
+                        <label for="inputRadio">Sysselsättning</label>
                     </div>
                     <div class="custom-control custom-radio occupationRadioButton ">
                         <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input " required>
-                        <label class="custom-control-label" for="customRadio1">Employed</label>
+                        <label class="custom-control-label" for="customRadio1">Arbetar</label>
                     </div>
                     <div class="custom-control custom-radio occupationRadioButton">
                         <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio2">Unemployed</label>
+                        <label class="custom-control-label" for="customRadio2">Arbetslös</label>
                     </div>
                     <div class="custom-control custom-radio occupationRadioButton">
                         <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
@@ -133,19 +109,18 @@
                     </div>
                     <div class="custom-control custom-radio occupationRadioButton">
                         <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio4">Other</label>
+                        <label class="custom-control-label" for="customRadio4">Annat</label>
                     </div>
                 </div>
-                <div id="alertRowRadio" class="form-row">You need to choose one of the above</div>
+                <small class="text-primary">Välj ett av alternativen</small>
+                
+                <hr>
                 <div class="form-row" id="textAreaRow">
                     <div class="form-group col-md-12">
-                        <label for="inputTextArea">Reason for registration.</label>
-                        <textarea class="form-control" aria-label="With textarea" id="inputTextArea"></textarea>
-                        <div class="valid-tooltip">
-                            Looks good!
-                        </div>
-                        <div class="invalid-tooltip">
-                            Your reasons needs atleast to be 20 characters long
+                        <label for="inputTextArea">Varför registrerar du dig?</label>
+                        <textarea class="form-control" aria-label="With textarea" id="inputTextArea" placeholder="Svar..."></textarea>
+                        <div class="invalid-feedback">
+                            Ditt svar måste innehålla minst 20 tecken
                         </div>
                     </div>
                 </div>

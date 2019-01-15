@@ -22,9 +22,15 @@ $(function () {
         $('#alertRow').addClass("alert alert-danger");
         $('#alertText').show(100);
         alert("registreringen misslyckades")
+
+        
     }
     e.preventDefault();
     });
+
+    function isInvalid(input) {
+        
+    }
 
 
     $('#inputAge').click(function () {
@@ -156,7 +162,7 @@ $(function () {
         let age = $('#inputAge option:selected').val();
         console.log(age);
         
-        if (age == "" || age == "Choose your birthyear") {
+        if (age == "" || age == "Välj ditt födelseår") {
             formValid.birthyear = false;
             $(this).removeClass("is-valid").addClass("is-invalid");
         } else {
