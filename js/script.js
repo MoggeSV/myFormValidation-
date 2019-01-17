@@ -16,13 +16,44 @@ $(function () {
     $('form').submit(function (e) {
     if (formValid.firstname == true && formValid.lastname == true && formValid.email == true && formValid.password == true && formValid.address == true && formValid.city == true && formValid.zip == true && formValid.birthyear == true && formValid.occupation == true && formValid.textarea == true) {
         //window.location.href = 'registration.html';
-        alert("Registrering lyckades")
+        alert("Registrering lyckades");
         return;
     } else {
         $('#alertRow').addClass("alert alert-danger");
         $('#alertText').show(100);
-        alert("registreringen misslyckades")
-
+        alert("registreringen misslyckades");
+        /*
+        if (formvValid.firstname == false) {
+            $("#inputFirstName").removeClass("is-valid").addClass("is-invalid");
+            e.preventDefault();
+        } else if (formValid.lastname == false) {
+            $("#inputLastName").removeClass("is-valid").addClass("is-invalid");
+            e.preventDefault();
+        } else if (formValid.email == false){
+            $("#inputEmail").removeClass("is-valid").addClass("is-invalid");
+            e.preventDefault();
+        } else if (formValid.password == false){
+            $("#inputPassword").removeClass("is-valid").addClass("is-invalid");
+            e.preventDefault();
+        } else if (formValid.address == false){
+            $("#inputAddress").removeClass("is-valid").addClass("is-invalid");
+            e.preventDefault();
+        } else if (formValid.city == false){
+            $("#inputCity").removeClass("is-valid").addClass("is-invalid");
+            e.preventDefault();
+        } else if (formValid.zip == false){
+            $("#inputZip").removeClass("is-valid").addClass("is-invalid");
+            e.preventDefault();
+        } else if (formValid.birthyear == false){
+            $("#inputAge").removeClass("is-valid").addClass("is-invalid");
+            e.preventDefault();
+        } else if (formValid.occupation == false){
+            $("#inputRadio").removeClass("is-valid").addClass("is-invalid");
+            e.preventDefault();
+        } else if (formValid.textarea == false){
+            $("#inputTextArea").removeClass("is-valid").addClass("is-invalid");
+            e.preventDefault();
+        }*/
         
     }
     e.preventDefault();
