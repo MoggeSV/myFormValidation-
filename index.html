@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
         crossorigin="anonymous">
 
@@ -22,18 +21,18 @@
             <div id="alertRow">
                 <p id="alertText">Du måste fylla i alla fält innan du skickar in formuläret</p>
             </div>
-            <form class="" action="registered.html" novalidate>
+            <form class="needs-validation" id="regForm" action="registered.html" novalidate>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputFirstName">Förnamn</label>
-                        <input type="text" class="form-control" id="inputFirstName">
+                        <input type="text" class="form-control" id="inputFirstName" required>
                         <div class="invalid-feedback">
                             Ditt förnamn måste innhålla minst 2 tecken
                         </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputLastName">Efternamn</label>
-                        <input type="text" class="form-control" id="inputLastName">
+                        <input type="text" class="form-control" id="inputLastName" required>
                         <div class="invalid-feedback">
                             Ditt efternamn måste innhålla minst 2 tecken
                         </div>
@@ -42,23 +41,23 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail">E-postadress</label>
-                        <input type="email" class="form-control" id="inputEmail">
+                        <input type="email" class="form-control" id="inputEmail" required>
                         <div class="invalid-feedback">
                             Du måste ange en korrekt e-postadress
                         </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword">Lösenord</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
                         <div class="invalid-feedback">
-                            Ditt lösenord måste innhålla minst 1 stor & 1 liten bokstav samt en siffra 
+                            Ditt lösenord måste vara minst 8 tecken långt och innhålla minst 1 stor & 1 liten bokstav samt en siffra 
                         </div>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="inputAddress">Adress</label>
-                        <input type="text" class="form-control" id="inputAddress">
+                        <input type="text" class="form-control" id="inputAddress" required>
                         <div class="invalid-feedback">
                             Din adress måste minst innehålla 2 tecken
                         </div>
@@ -68,14 +67,14 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputCity">Ort</label>
-                        <input type="text" class="form-control" id="inputCity">
+                        <input type="text" class="form-control" id="inputCity" required>
                         <div class="invalid-feedback">
                             Din ort måste minst innhålla 2 tecken
                         </div>
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputZip">Postnummer</label>
-                        <input type="text" class="form-control" id="inputZip" maxlength="5" minlength="5">
+                        <input type="text" class="form-control" id="inputZip" maxlength="5" minlength="5" required>
                         <div class="invalid-feedback">
                             Ditt postnummer måste innehålla 5 siffror
                         </div>
@@ -93,32 +92,33 @@
                 <hr>
                 <div class="form-row radio-section">
                     <div class="form-group col-md-12 radioButtons">
-                        <label for="inputRadio">Sysselsättning</label>
+                        <label for="customRadio" id="inputRadio">Sysselsättning</label>
                     </div>
                     <div class="custom-control custom-radio occupationRadioButton ">
-                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input " required>
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="Arbetar" required>
                         <label class="custom-control-label" for="customRadio1">Arbetar</label>
                     </div>
                     <div class="custom-control custom-radio occupationRadioButton">
-                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="Arbetslös">
                         <label class="custom-control-label" for="customRadio2">Arbetslös</label>
                     </div>
                     <div class="custom-control custom-radio occupationRadioButton">
-                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="Student">
                         <label class="custom-control-label" for="customRadio3">Student</label>
                     </div>
                     <div class="custom-control custom-radio occupationRadioButton">
-                        <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input" value="Annat">
                         <label class="custom-control-label" for="customRadio4">Annat</label>
                     </div>
                 </div>
-                <small class="text-primary">Välj ett av alternativen</small>
+
+                <small id="radioText" class="text-primary">Välj ett av alternativen</small>
                 
                 <hr>
                 <div class="form-row" id="textAreaRow">
                     <div class="form-group col-md-12">
                         <label for="inputTextArea">Varför registrerar du dig?</label>
-                        <textarea class="form-control" aria-label="With textarea" id="inputTextArea" placeholder="Svar..."></textarea>
+                        <textarea class="form-control" aria-label="With textarea" id="inputTextArea" placeholder="Svar..." required></textarea>
                         <div class="invalid-feedback">
                             Ditt svar måste innehålla minst 20 tecken
                         </div>
