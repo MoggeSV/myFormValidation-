@@ -33,16 +33,16 @@ form{
 }
 
 h1{
-    font-size: 3rem;
+    font-size: 2.3rem;
     font-weight: bold;
 }
 
-.wrapper{
-    background: url(/images/achievement-activity-adolescent-347135.jpg);
-    
+#bgImage{
+    max-width: 100%;
+    height: auto;
 }
 
-.radio-section{
-    
-    
+#footerText{
+    font-weight: bold;
 }
+

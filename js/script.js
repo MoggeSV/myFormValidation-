@@ -232,7 +232,17 @@ $(function () {
         }
     });
 
-    
+    //registered page
+
+    $("#bgImage").mouseenter(function () {
+        $(this).removeClass("shadow-lg").addClass("shadow");
+    });
+
+    $("#bgImage").mouseleave(function () {
+        $(this).addClass("shadow-lg").removeClass("shadow");
+    });
+
+
 });
 
 
