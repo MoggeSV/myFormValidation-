@@ -1,52 +1,6 @@
 $(function () {
     'use strict';
 
-    let formValid = {
-        firstname: false,
-        lastname: false,
-        email: false,
-        password: false,
-        address: false,
-        city: false,
-        zip: false,
-        birthyear: false,
-        occupation: false,
-        textarea: false
-    };
-
-    //submit
-    /*
-        $("#submit").click(function (event) {
-            
-            
-    
-            if (formValid.firstname == false || formValid.lastname == false || formValid.email == false || formValid.password == false || formvalid.address == false || formValid.city == false || formValid.zip == false || formValid.birthyear == false || formValid.occupation == false || formValid.textarea == false) {
-    
-                event.preventDefault();
-                event.stopPropagation();
-                $('#alertRow').addClass("alert alert-danger");
-                $('#alertText').show();
-                $('#regForm').addClass("was-validated");
-                
-            }
-                
-        });
-    
-    */
-
-
-    /*$('.needs-validation').submit(function (event) {
-        if (formValid.firstname == false || formValid.lastname == false || formValid.email == false || formValid.password == false || formvalid.address == false || formValid.city == false || formValid.zip == false || formValid.birthyear == false || formValid.occupation == false || formValid.textarea == false) {
-
-            event.preventDefault();
-            event.stopPropagation();
-            $('#alertRow').addClass("alert alert-danger");
-            $('#alertText').show();
-            
-        }
-    })*/
-
-
     //functions
 
     $('#inputAge').ready(function () {
@@ -70,11 +24,9 @@ $(function () {
     $("#inputFirstName").blur(function () {
         if ($(this).val().length < 2) {
             isInvalid(this);
-            formValid.firstname = false;
             return false;
         } else {
             isValid(this);
-            formValid.firstname = true;
             return true;
         }
     });
@@ -82,40 +34,32 @@ $(function () {
     $("#inputLastName").blur(function () {
         if ($(this).val().length < 2) {
             isInvalid(this);
-            formValid.lastname = false;
         } else {
             isValid(this);
-            formValid.lastname = true;
         }
     });
 
     $("#inputAddress").blur(function () {
         if ($(this).val().length < 2) {
             isInvalid(this);
-            formValid.address = false;
         } else {
             isValid(this);
-            formValid.address = true;
         }
     });
 
     $("#inputCity").blur(function () {
         if ($(this).val().length < 2) {
             isInvalid(this);
-            formValid.city = false;
         } else {
             isValid(this);
-            formValid.city = true;
         }
     });
 
     $("#inputTextArea").blur(function () {
         if ($(this).val().length < 20) {
             isInvalid(this);
-            formValid.textarea = false;
         } else {
             isValid(this);
-            formValid.textarea = true;
         }
     });
 
@@ -162,10 +106,8 @@ $(function () {
 
         if (validateEmail($(this).val())) {
             isValid(this);
-            formValid.email = true;
         } else {
             isInvalid(this);
-            formValid.email = false;
         }
     });
 
@@ -173,20 +115,16 @@ $(function () {
 
         if (validatePassword($(this).val())) {
             isValid(this);
-            formValid.password = true;
         } else {
             isInvalid(this);
-            formValid.password = false;
         }
     });
 
     $('#inputZip').blur(function () {
         if (validateZip($(this).val())) {
             isValid(this);
-            formValid.zip = true;
         } else {
             isInvalid(this);
-            formValid.zip = false;
         }
     });
 
@@ -198,10 +136,8 @@ $(function () {
 
         if (age == "" || age == "Välj ditt födelseår") {
             isInvalid(this);
-            formValid.birthyear = false;
         } else {
             isValid(this);
-            formValid.birthyear = true;
         }
     });
 
@@ -209,10 +145,8 @@ $(function () {
         let age = $('#inputAge option:selected').val();
         if (age == "" || age == "Välj ditt födelseår") {
             isInvalid(this);
-            formValid.birthyear = false;
         } else {
             isValid(this);
-            formValid.birthyear = true;
         }
     });
 
@@ -222,11 +156,8 @@ $(function () {
         if ($('input[name=customRadio]:checked').length == 0) {
 
             isInvalid(($('input[name=customRadio]')));
-            formValid.occupation = false;
         } else {
             isValid(($('input[name=customRadio]')));
-
-            formValid.occupation = true;
         }
     });
 
@@ -234,13 +165,9 @@ $(function () {
         if ($('input[name=customRadio]:checked').length == 0) {
 
             isInvalid(($('input[name=customRadio]')));
-            formValid.occupation = false;
-            console.log(formValid.occupation);
         } else {
             isValid(($('input[name=customRadio]')));
 
-            formValid.occupation = true;
-            console.log(formValid.occupation);
         }
     });
 
@@ -256,6 +183,8 @@ $(function () {
         }
 
     });
+
+    //submit & validation
 
     function checkInputlength(id, size) {
 
@@ -289,36 +218,21 @@ $(function () {
         }
     }
 
-    
-
 
     $("#submit").on("click", function (){
 
-        if (checkRadio() && checkSelect() && checkInputlength("#inputFirstName", 2) && checkInputlength("#inputLastName", 2) && validatePassword($("#inputPassword").val()) && checkInputlength("#inputAddress", 2) && checkInputlength("#inputCity", 2) && validateZip($("#inputZip").val()) && checkInputlength("#inputTextArea", 20) && validateEmail($("#inputEmail").val())) {
+        if (checkInputlength("#inputFirstName", 2) && checkInputlength("#inputLastName", 2) && validateEmail($("#inputEmail").val()) && validatePassword($("#inputPassword").val()) && checkInputlength("#inputAddress", 2) && checkInputlength("#inputCity", 2) && validateZip($("#inputZip").val()) && checkSelect() && checkRadio() && checkInputlength("#inputTextArea", 20)) {
             
         }else{
+            isInvalid("#inputCheck");
+            $("#inputCheck").prop("checked", false);
+            $('#submit').prop("disabled", true);
             event.preventDefault();
             event.stopPropagation();
         }
     });
 
-
-
     
-
-    /*  window.addEventListener("load", function () {
-         var forms = document.getElementsByClassName("needs-validation");
-         Array.prototype.filter.call(forms, function (form) {
-             form.addEventListener("submit", function (event) {
-                 if (form.checkValidity() === false) {
-                     event.preventDefault();
-                     event.stopPropagation();
-                 }
-                 form.classList.add("was-validated");
-             }, false);
-         });
-     }, false); */
-
 });
 
 
