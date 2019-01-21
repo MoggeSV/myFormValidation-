@@ -82,7 +82,7 @@
                     <div class="form-group col-md-4">
                         <label for="inputAge">Födelseår</label>
                         <select id="inputAge" class="form-control" required>
-                            <option selected>Välj ditt födelseår</option>
+                            <option value="">Välj ditt födelseår</option>
                         </select>
                         <div class="invalid-feedback">
                             Du måste välja ett årtal från listan
@@ -95,20 +95,20 @@
                         <label for="customRadio" id="inputRadio">Sysselsättning</label>
                     </div>
                     <div class="custom-control custom-radio occupationRadioButton ">
-                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="Arbetar" required>
-                        <label class="custom-control-label" for="customRadio1">Arbetar</label>
+                        <input type="radio" id="customRadio1" name="customRadio" class="form-check-input" value="Arbetar" required>
+                        <label class="form-check-label" for="customRadio1">Arbetar</label>
                     </div>
                     <div class="custom-control custom-radio occupationRadioButton">
-                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="Arbetslös">
-                        <label class="custom-control-label" for="customRadio2">Arbetslös</label>
+                        <input type="radio" id="customRadio2" name="customRadio" class="form-check-input" value="Arbetslös">
+                        <label class="form-check-label" for="customRadio2">Arbetslös</label>
                     </div>
                     <div class="custom-control custom-radio occupationRadioButton">
-                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="Student">
-                        <label class="custom-control-label" for="customRadio3">Student</label>
+                        <input type="radio" id="customRadio3" name="customRadio" class="form-check-input" value="Student">
+                        <label class="form-check-label" for="customRadio3">Student</label>
                     </div>
                     <div class="custom-control custom-radio occupationRadioButton">
-                        <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input" value="Annat">
-                        <label class="custom-control-label" for="customRadio4">Annat</label>
+                        <input type="radio" id="customRadio4" name="customRadio" class="form-check-input" value="Annat">
+                        <label class="form-check-label" for="customRadio4">Annat</label>
                     </div>
                 </div>
 
@@ -127,7 +127,7 @@
 
                 <div class="form-group">
                     <div class="form-check">
-                        <input class="form-check-input is-invalid" type="checkbox" value="" id="inputCheck" required>
+                        <input class="form-check-input is-invalid form-check-input" type="checkbox" value="" id="inputCheck" required>
                         <label class="form-check-label" for="inputCheck">
                             Agree to terms and conditions
                         </label>

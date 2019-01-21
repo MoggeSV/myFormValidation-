@@ -1,5 +1,5 @@
 $(function () {
-   'use strict';
+    'use strict';
 
     let formValid = {
         firstname: false,
@@ -15,9 +15,27 @@ $(function () {
     };
 
     //submit
+    /*
+        $("#submit").click(function (event) {
+            
+            
+    
+            if (formValid.firstname == false || formValid.lastname == false || formValid.email == false || formValid.password == false || formvalid.address == false || formValid.city == false || formValid.zip == false || formValid.birthyear == false || formValid.occupation == false || formValid.textarea == false) {
+    
+                event.preventDefault();
+                event.stopPropagation();
+                $('#alertRow').addClass("alert alert-danger");
+                $('#alertText').show();
+                $('#regForm').addClass("was-validated");
+                
+            }
+                
+        });
+    
+    */
 
-    $("#submit").click(function (event) {
-        console.log(formValid.occupation);
+
+    /*$('.needs-validation').submit(function (event) {
         if (formValid.firstname == false || formValid.lastname == false || formValid.email == false || formValid.password == false || formvalid.address == false || formValid.city == false || formValid.zip == false || formValid.birthyear == false || formValid.occupation == false || formValid.textarea == false) {
 
             event.preventDefault();
@@ -26,9 +44,7 @@ $(function () {
             $('#alertText').show();
             
         }
-            
-    });
-
+    })*/
 
 
     //functions
@@ -39,15 +55,15 @@ $(function () {
         }
     });
 
-    function isValid(element, validClass = "is-valid", invalidClass= "is-invalid") {
+    function isValid(element, validClass = "is-valid", invalidClass = "is-invalid") {
         $(element).addClass(validClass);
         $(element).removeClass(invalidClass);
     }
 
-    function isInvalid(element, validClass = "is-valid", invalidClass= "is-invalid") {
+    function isInvalid(element, validClass = "is-valid", invalidClass = "is-invalid") {
         $(element).addClass(invalidClass);
         $(element).removeClass(validClass);
-    } 
+    }
 
     //Text inputs
 
@@ -55,9 +71,11 @@ $(function () {
         if ($(this).val().length < 2) {
             isInvalid(this);
             formValid.firstname = false;
+            return false;
         } else {
             isValid(this);
             formValid.firstname = true;
+            return true;
         }
     });
 
@@ -105,18 +123,39 @@ $(function () {
 
 
     function validateEmail(email) {
+        
         let regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return regex.test(email);
+        if (regex.test(email)) {
+            isValid($("#inputEmail"));
+            return true;
+        } else {
+            isInvalid($("#inputEmail"));
+            return false;
+        }
     };
 
+    
     function validatePassword(password) {
         let regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-        return regex.test(password);
+        if (regex.test(password)) {
+            isValid($("#inputPassword"));
+            return true;
+        } else {
+            isInvalid($("#inputPassword"));
+            return false;
+        }
     };
 
     function validateZip(zip) {
         let regex = /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]{5,}$/;
-        return regex.test(zip);
+        if (regex.test(zip)) {
+            isValid($("#inputZip"));
+            return true;
+        } else {
+            isInvalid($("#inputZip"));
+            return false;
+        }
+        
     };
 
     $('#inputEmail').blur(function () {
@@ -142,21 +181,21 @@ $(function () {
     });
 
     $('#inputZip').blur(function () {
-         if (validateZip($(this).val())) {
-                isValid(this);
-                formValid.zip = true;
-            } else {
-                isInvalid(this);
-                formValid.zip = false;
-            }
+        if (validateZip($(this).val())) {
+            isValid(this);
+            formValid.zip = true;
+        } else {
+            isInvalid(this);
+            formValid.zip = false;
+        }
     });
 
     //Select validation
 
     $('#inputAge').on('change', function () {
         let age = $('#inputAge option:selected').val();
-        
-        
+
+
         if (age == "" || age == "Välj ditt födelseår") {
             isInvalid(this);
             formValid.birthyear = false;
@@ -181,33 +220,33 @@ $(function () {
 
     $('input[name=customRadio]').on('change', function () {
         if ($('input[name=customRadio]:checked').length == 0) {
-            console.log($('input[name=customRadio]:checked').length);
+
             isInvalid(($('input[name=customRadio]')));
             formValid.occupation = false;
         } else {
             isValid(($('input[name=customRadio]')));
-            console.log($('input[name=customRadio]:checked').length);
+
             formValid.occupation = true;
         }
-     });
+    });
 
-     $('input[name=customRadio]').blur(function () {
+    $('input[name=customRadio]').blur(function () {
         if ($('input[name=customRadio]:checked').length == 0) {
-            console.log($('input[name=customRadio]:checked').length);
+
             isInvalid(($('input[name=customRadio]')));
             formValid.occupation = false;
             console.log(formValid.occupation);
         } else {
             isValid(($('input[name=customRadio]')));
-            console.log($('input[name=customRadio]:checked').length);
+
             formValid.occupation = true;
             console.log(formValid.occupation);
         }
-     });
+    });
 
-     //checkbox and submit button
+    //checkbox and submit button
 
-     $('#inputCheck').on('change', function () {
+    $('#inputCheck').on('change', function () {
         if ($(this).is(':checked')) {
             $(this).removeClass("is-invalid").addClass("is-valid");
             $('#submit').prop("disabled", false);
@@ -218,22 +257,68 @@ $(function () {
 
     });
 
+    function checkInputlength(id, size) {
+
+        if ($(id).val().length < size) {
+            isInvalid(id);
+            return false;
+        } else {
+            isValid(id);
+            return true;
+        }
+    }
+    
+    function checkSelect() {
+        if ($('#inputAge option:selected').val()) {
+            isValid("#inputAge");
+            return true;
+        } else {
+            isInvalid("#inputAge");
+            return false;
+        }
+    }
+
+    function checkRadio() {
+        
+        if ($('input[name=customRadio]:checked').length == 1) {
+            isValid(($('input[name=customRadio]')));
+            return true;
+        } else {
+            isInvalid(($('input[name=customRadio]')));
+            return false;
+        }
+    }
+
+    
 
 
-    /*
-    window.addEventListener("load", function() {
-        var forms = document.getElementsByClassName("needs-validation");
-        Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener("submit", function(event) {
-                if(form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add("was-validated");
-            }, false);
-        });
-    }, false);
-    */
+    $("#submit").on("click", function (){
+
+        if (checkRadio() && checkSelect() && checkInputlength("#inputFirstName", 2) && checkInputlength("#inputLastName", 2) && validatePassword($("#inputPassword").val()) && checkInputlength("#inputAddress", 2) && checkInputlength("#inputCity", 2) && validateZip($("#inputZip").val()) && checkInputlength("#inputTextArea", 20) && validateEmail($("#inputEmail").val())) {
+            
+        }else{
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    });
+
+
+
+    
+
+    /*  window.addEventListener("load", function () {
+         var forms = document.getElementsByClassName("needs-validation");
+         Array.prototype.filter.call(forms, function (form) {
+             form.addEventListener("submit", function (event) {
+                 if (form.checkValidity() === false) {
+                     event.preventDefault();
+                     event.stopPropagation();
+                 }
+                 form.classList.add("was-validated");
+             }, false);
+         });
+     }, false); */
+
 });
 
 
